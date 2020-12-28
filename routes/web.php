@@ -34,3 +34,8 @@ Route::resource('order', 'OrderController');
 Route::get('paypal/checkout', 'PaypalController@getExpressCheckout');
 Route::get('paypal/checkout-success', 'PaypalController@getExpressCheckoutSuccess')->name('paypal.success');
 Route::get('paypal/checkout-cancel', 'PaypalController@getExpressCheckoutCancel')->name('paypal.cancel');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
