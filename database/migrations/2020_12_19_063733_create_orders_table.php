@@ -20,7 +20,6 @@ class CreateOrdersTable extends Migration
             $table->float('total');
             $table->integer('item_count');
             $table->boolean('is_paid')->default(false);
-            $table->enum('payment_method', ['cach_on_delivery', 'paypal', 'stripe', 'card']);
             $table->string('shipping_fullname');
             $table->string('shipping_address');
             $table->string('shipping_city');

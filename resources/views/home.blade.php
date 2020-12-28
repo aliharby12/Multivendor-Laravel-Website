@@ -7,7 +7,7 @@
 
       <h1 class="my-4">E-Shop</h1>
       <div class="list-group">
-        <a href="https://netarabia.com/" class="list-group-item">Netarabia Agancy</a>
+        <a href="https://netarabia.com/" class="list-group-item">Developed By: Ali Harby</a>
         <a href="#" class="list-group-item">aliharby565@gmail.com</a>
         <a href="#" class="list-group-item">+201066038993</a>
       </div>

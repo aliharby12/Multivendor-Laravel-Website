@@ -29,7 +29,6 @@ class OrderController extends Controller
             'shipping_city' => 'required',
             'shipping_address' => 'required',
             'shipping_phone' => 'required',
-            'payment_method' => 'required'
         ]);
 
         $order = new Order();
@@ -69,15 +68,8 @@ class OrderController extends Controller
             $order->items()->attach($item->id, ['price' => $item->price, 'quantity' => $item->quantity]);
         }
 
-        //payment method
-        if (request('payment_method') == 'paypal') {
-            // redirect to paypal sdk
-        }
-
-        // clear the cart
         \Cart::clear();
-
-        return "done";
+        return redirect('/');
     } //end of store
 
 

@@ -18,12 +18,12 @@
                     <td>{{Cart::get($item->id)->getPriceSum()}}</td>
                     <td>
                         <form action="{{route('cart.update', $item->id)}}">
-                            <input name="quantity" type="number" value="{{$item->quantity}}">
-                            <input type="submit" value="save">
+                            <input min="1" max="5" name="quantity" type="number" value="{{$item->quantity}}">
+                            <input type="submit" value="save" class="btn btn-info">
                         </form>
                     </td>
                     <td>
-                        <a href="{{route('cart.destroy', $item->id)}}">Delete</a>
+                        <a href="{{route('cart.destroy', $item->id)}}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
             @endforeach

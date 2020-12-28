@@ -36,22 +36,6 @@
             <label for="">Phone</label>
             <input type="text" name="shipping_phone" id="" class="form-control">
         </div>
-
-        <h4>Payment Options</h4>
-
-        <div class="form-check">
-            <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="" id="" value="paypal">
-            PayPal
-          </label>
-        </div>
-
-        <div class="form-check">
-            <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="" id="" value="cach">
-            Cach On Delivery
-          </label>
-        </div>
         <button type="submit" class="btn btn-primary mt-3">Sumbit the order</button>
     </form>
 
