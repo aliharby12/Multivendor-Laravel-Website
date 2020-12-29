@@ -30,6 +30,6 @@
         </tbody>
     </table>
 
-    <h3 class="mt-5">Total Price: {{Cart::getTotal() }}</h3>
+    <h3 class="mt-5">Total Price: ${{Cart::getTotal() }}</h3>
     <a class="btn btn-primary mt-5" href="{{route('cart.checkout')}}">Check Out</a>
 @endsection
