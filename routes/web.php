@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/', '/home');
-
+// authentication routes
 Auth::routes();
 
+// front routes
+Route::redirect('/', '/home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 // cart routes
@@ -29,6 +30,9 @@ Route::get('/cart/checkout/', 'CartController@checkout')->name('cart.checkout');
 // order routes
 Route::resource('order', 'OrderController');
 
+// shop routes
+Route::resource('shop', 'ShopController')->middleware('auth');
+
 
 // paypal routes
 Route::get('paypal/checkout', 'PaypalController@getExpressCheckout');
@@ -36,7 +40,7 @@ Route::get('paypal/checkout-success', 'PaypalController@getExpressCheckoutSucces
 Route::get('paypal/checkout-cancel', 'PaypalController@getExpressCheckoutCancel')->name('paypal.cancel');
 
 
-
+// voyager routes
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Order;
 use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class OrderController extends Controller
 {
@@ -69,7 +70,9 @@ class OrderController extends Controller
         }
 
         \Cart::clear();
-        return redirect('/');
+
+        Session::flash('success', 'your order has been submitted successfully');
+        return redirect('home');
     } //end of store
 
 

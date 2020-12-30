@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
-
 use App\Product;
 use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
@@ -20,6 +19,7 @@ class CartController extends Controller
             'associatedModel' => $product
         ));
 
+        Session::flash('success', 'product added successfully');
         return back();
     }
 
@@ -32,6 +32,7 @@ class CartController extends Controller
     public function destroy($itemId)
     {
         \Cart::remove($itemId);
+        Session::flash('success', 'product has been deleted successfully');
         return back();
     }
 
@@ -44,6 +45,7 @@ class CartController extends Controller
             )
         ]);
 
+        Session::flash('success', 'your cart updated successfully');
         return back();
     }
 
