@@ -67,6 +67,9 @@
       </div>
       <!-- /.row -->
 
+      <div class="d-flex justify-content-center mt-5">
+        {{ $products->links() }}
+      </div>
     </div>
     <!-- /.col-lg-9 -->
 
